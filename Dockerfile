@@ -8,14 +8,15 @@ ENV PIP_NO_CACHE_DIR=off
 
 WORKDIR /app
 
-python3 -m venv .venv
-source .venv/bin/activate
+RUN python3 -m venv .venv
+RUN /bin/bash -c "source .venv/bin/activate"
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 COPY . .
 
+ENV FLASK_APP=src/app.py
 EXPOSE 5000
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=5000", "--app=src/app"]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=5000"]
