@@ -1,0 +1,11 @@
+__pycache__
+.venv
+.vscode
+.git
+.gitignore
+.log
+.dockerignore
+Dockerfile*
+docker-compose*
+README.md
+LICENSE
