@@ -36,9 +36,7 @@ def call_api(text):
             "text": text,
         },
     )
-    data = response.json()
-
-    return data
+    return response.json()
 
 
 def send_message(conversationId, text):
